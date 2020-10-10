@@ -10,7 +10,7 @@ import requests
 from os import getenv
 
 # uncomment the code below to test locally
-#from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # load_dotenv()
 
@@ -96,7 +96,8 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(from_address, password)
 
     for senator in list_of_senators:
-        if senator != "N.A" or senator != "":
+        print(senator)
+        if senator['sen_email'] != 'N.A':
             server.sendmail(
                 from_address,
                 senator['sen_email'],
