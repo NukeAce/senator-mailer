@@ -96,7 +96,6 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(from_address, password)
 
     for senator in list_of_senators:
-        print(senator)
         if senator['sen_email'] != 'N.A':
             server.sendmail(
                 from_address,
