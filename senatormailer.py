@@ -19,7 +19,7 @@ from_address = getenv("YOUR_GMAIL_ACCOUNT")
 password = getenv("YOUR_GMAIL_PASSWORD")
 
 
-# get list of senators from NGLEADERS api.
+# get list of senators from NGLEADERS api. 200 will be our portion always amen!
 resp = requests.get('http://ngleadersdb.herokuapp.com/api/senator/all')
 list_of_senators = resp.json()["data"]
 
@@ -77,3 +77,5 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
             message.format(name=senator['sen_name'].title(), party=senator['political_party'],
                            district=senator['district'], state=senator['state'], zone=senator['sen_zone']),
         )
+        # print success to console
+        print(f"Message sent to {senator['sen_name'].title()}")
