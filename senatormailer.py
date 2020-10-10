@@ -96,12 +96,12 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(from_address, password)
 
     for senator in list_of_senators:
-
-        server.sendmail(
-            from_address,
-            senator['sen_email'],
-            message.format(name=senator['sen_name'].title(), party=senator['political_party'],
-                           district=senator['district'], state=senator['state'], zone=senator['sen_zone']),
-        )
-        # print success to console
-        print(f"Message sent to {senator['sen_name'].title()}")
+        if senator != "N.A" or senator != "":
+            server.sendmail(
+                from_address,
+                senator['sen_email'],
+                message.format(name=senator['sen_name'].title(), party=senator['political_party'],
+                               district=senator['district'], state=senator['state'], zone=senator['sen_zone']),
+            )
+            # print success to console
+            print(f"Message sent to {senator['sen_name'].title()}")
