@@ -39,9 +39,31 @@ This script will send a reminder email to Nigerian Senators once a day until our
 - Step 4: 
   Deploy to Heroku using the following steps:
 
-  Step4a: Open [Heroku](https://heroku.com) and sign up if you haven't.
+  4a: Open [Heroku](https://heroku.com) and sign up if you haven't.
   
-  Step4b: TBC
+  4b: Create a new app
+
+  4c: Configure app to connect with your GitHub project in the Deploy > Deploy Method tab
+
+  4d: Configure the .env variables using settings > Reveal Config Vars and entering YOUR_GMAIL_ACCOUNT & YOUR_GMAIL_PASSWORD in the key area and your Gmail Credentials in the corresponding value area
+
+- Step5: 
+  To Schedule the mail to send to the senators
+
+  5a: In your app dashboard to resources and search for Heroku Scheduler and add it to your deployment.(its free!)
+
+  5b: In Heroku Scheduler click create job, set the time and add 
+  ```bash
+  python senatormailer.py
+  ```
+  in the Run Command field.
+
+  Save job and you're done!!
+
+
+  **JOIN THE FIGHT TO END SARS! HOLD YOUR LEADERS ACCOUNTABLE!! [#ENDSARS](https://twitter.com/hashtag/endsars?lang=en)**
+
+*PS: Stuck? We all get stuck open an issue or shoot a dm to [@hmedtijani](https://twitter.com/hmedtijani)*
     
 
 
