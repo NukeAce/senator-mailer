@@ -23,7 +23,33 @@ password = getenv("YOUR_GMAIL_PASSWORD")
 resp = requests.get('http://ngleadersdb.herokuapp.com/api/senator/all')
 list_of_senators = resp.json()["data"]
 
-
+# to test use the following dummy data replace 'youremail@example.com' with your real email or a test email in the sen_email key:value.
+# list_of_senators = [{
+#     "id": 1,
+#     "sen_name": "SEN. AHMAD LAWAN",
+#     "sen_phone": "07055090323",
+#     "sen_zone": "North East",
+#     "sen_email": "youremail@example.com",
+#     "created_at": "2019-12-08 20:50:07",
+#     "updated_at": "2019-12-08 20:50:07",
+#     "state": "Yobe",
+#     "district": "Yobe North",
+#     "political_party": "APC",
+#     "sen_pic": "http://res.cloudinary.com/ngleadersdb/image/upload/c_fit,h_400,w_400/fewvehzp324kus9foxxg.png"
+# },
+#     {
+#     "id": 11,
+#     "sen_name": "SEN. OVIE OMO-AGEGE",
+#     "sen_phone": "07033399937",
+#     "sen_zone": "South-South",
+#     "sen_email": "youremail@example.com",
+#     "created_at": "2019-12-08 20:52:54",
+#     "updated_at": "2019-12-08 20:52:54",
+#     "state": "Delta",
+#     "district": "Delta Central",
+#     "political_party": "APC",
+#     "sen_pic": "http://res.cloudinary.com/ngleadersdb/image/upload/c_fit,h_400,w_400/nfb01tki2qxi98eumb76.png"
+# }]
 # The message to be sent to the recipient
 message = """Subject: URGENT! SAVE OUR CITIZENS: END SARS! END POLICE BRUTALITY
 
